@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>IT-Support | Offertenrechner</title>
+</head>
+<body>
+    <h1 class="title">IT Support AG | Offertenrechner</h1>
+    <div class="rechner">
+        <form action="" id="form">
+            <label for="stunden" id="hours">Benötigte Stunden: <input required type="number" name="stunden" id="stunden"/></label>
+            <label>Länge der gefahrenen Strecke(in km): <input required type="number" name="strecke" id="strecke"></label>
+            <div id="matBtnLab">
+                <label>Benötigtes Material: </label>
+                <div id="addRemove">
+                    <input type="button" value="+" onclick="onAddMaterial()">
+                    <input type="button" value="-" onclick="removeMaterial()">
+                </div>
+            </div>
+            <div id="materialContainer">
+                <div id="material0" class="material">
+                    <label>Beschreibung Material: <input required type="text" name="beschreibung_material" id="beschreibung_material" class="beschreibung_material"></label>
+                    <label>Anzahl Material: <input required type="number" name="anzahl_material" id="anzahl_material" class="anzahl_material"></label>
+                    <label>Preis p. Stk. Material: <input required type="text" name="pps_material" id="pps_material" class="pps_material"></label>
+                </div>
+            </div>
+            <div>
+                <label for="skonto">Skonto</label><input type="checkbox" name="skonto" id="skonto">
+            </div>
+            <div>
+                <label for="rabatt">Rabatt</label><input type="checkbox" name="rabatt" id="rabatt">
+            </div>
+            <input type="button" id="berechnen" value="Berechnen" onclick="onClick()">
+        </form>
+        <br>
+        <br>
+        <table id="materialTable">
+            <thead>
+                <tr id="header">
+                    <th>
+                        <p>Beschreibung</p>
+                    </th>
+                    <th>
+                        <p>Preis pro Einheit</p>
+                    </th>
+                    <th>
+                        <p>Anzahl</p>
+                    </th>
+                    <th>
+                        <p>Preis total</p>
+                    </th>
+                </tr>
+            </thead>
+            <h2 class="header2">Offerte</h2>
+            <tbody id="matTableBody">
+                <tr>
+                    <td class="beschreibung">
+                        <p>
+                            Preis für Dienstleistung (Stunden)
+                        </p>
+                    </td>
+                    <td id="stunden_pps0" class="stunden_pps">
+                        <p class="stunden_pps_p" id="stunden_pps_p">
+
+                        </p>
+                    </td>
+                    <td id="stunden_anzahl0" class="stunden_anzahl">
+                        <p class="stunden_anzahl_p" id="stunden_anzahl_p">
+
+                        </p>
+                    </td>
+                    <td id="stunden_preis0" class="stunden_preis">
+                        <p class="stunden_preis_p" id="stunden_preis_p">
+
+                        </p>
+                    </td>
+                </tr>
+                <tr id="row_Strecke">
+                    <td class="beschreibung">
+                        <p>
+                            Preis für zurückzulegende Strecke
+                        </p>
+                    </td>
+                    <td id="strecke_pps0" class="strecke_pps">
+                        <p id="strecke_pps_p">
+
+                        </p>
+                    </td>
+                    <td id="strecke_anzahl0" class="strecke_anzahl">
+                        <p id="strecke_anzahl_p">
+
+                        </p>
+                    </td>
+                    <td id="strecke_preis0" class="strecke_preis">
+                        <p id="strecke_preis_p">
+
+                        </p>
+                    </td>
+                </tr>
+                    <tr class="materialRow" id="materialRow0">
+                        <td class="data_beschreibung beschreibung" id="data_beschreibung0">
+                            <p id="data_beschreibung_p0" class="data_beschreibung">
+
+                            </p>
+                        </td>
+                        <td class="data_pps" id="data_pps0">
+                            <p id="data_pps_p0" class="data_pps">
+
+                            </p>
+                        </td>
+                        <td class="data_anzahl" id="data_anzahl0">
+                            <p id="data_anzahl_p0" class="data_anzahl">
+
+                            </p>
+                        </td>
+                        <td class="data_preis" id="data_preis0">
+                            <p id="data_preis_p0" class="data_preis">
+
+                            </p>
+                        </td>
+                    </tr>
+                    <tr id="twoColTR">
+                        <td>
+                            <p>Beschreibung</p>
+                        </td>
+                        <td colspan="3" class="threeCol">
+                            <p>Preis total</p>
+                        </td>
+                    </tr>
+                    <tr id="verwaltungskostenTR">
+                        <td class="beschreibung">
+                            <p>Verwaltungskosten</p>
+                        </td>
+                        <td class="verwaltungskosten threeCol" colspan="3">
+                            <p id="verwaltungskosten_p">
+
+                            </p>
+                        </td>
+                    </tr>
+                    <tr id="tr_ohneMWST">
+                        <td class="beschreibung">
+                            <p>Total ohne MWSt:</p> 
+                        </td>
+                        <td id="totalOhneMWST" colspan="3" class="threeCol">
+                            <p id="totalOhneMWST_p">
+
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="beschreibung">
+                            <p>Total</p>
+                        </td>
+                        <td colspan="3" class="threeCol">
+                            <p id="total">
+                                
+                            </p>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>

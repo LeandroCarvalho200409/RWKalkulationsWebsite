@@ -1,0 +1,131 @@
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  font-size: 36pt;
+  text-align: center;
+  color: green;
+}
+.header2{
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  font-size: 24pt;
+  text-align: center;
+  color: green;
+}
+.rechner form {
+  display: flex;
+  flex-direction: column;
+}
+.material {
+  display: flex;
+  margin-right: 20px;
+}
+#matBtnLab {
+  display: flex;
+}
+#matBtnLab label {
+  height: fit-content;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: fit-content;
+}
+#addRemove {
+  display: flex;
+  margin-left: 20px;
+}
+#addRemove input {
+  width: 20px;
+}
+#berechnen {
+  width: 150px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+form {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #5bde5d;
+  border-radius: 20px;
+}
+form label {
+  width: fit-content;
+  margin-left: 20px;
+}
+form input {
+  width: fit-content;
+}
+/* Chrome, Safari, Edge, Opera */
+form input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+form input[type="button"] {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  border-style: none;
+}
+form input[type="text"],
+form input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  border-bottom: grey solid;
+  background-color: #5bde5d;
+}
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+  outline: none;
+}
+#hours {
+  margin-top: 10px;
+}
+#materialTable {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border-radius: 20px;
+}
+#materialTable td {
+  text-align: center;
+  border-style: solid;
+}
+#materialTable th {
+  text-align: center;
+  font-size: 14pt;
+  font-weight: bold;
+  border-style: solid;
+}
+.threeCol p {
+  text-align: center;
+}
+#twoColTR p {
+  font-size: 14pt;
+  font-weight: bold;
+}
+#twoColTR {
+  background-color: #8fd990;
+}
+#header {
+  background-color: #8fd990;
+}
+.beschreibung {
+  background-color: #8fd990;
+}
+#total {
+  font-weight: bold;
+  text-decoration: underline double red;
+  color: red;
+}
